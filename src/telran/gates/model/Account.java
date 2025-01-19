@@ -1,7 +1,11 @@
 package telran.gates.model;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Account {
 
+    private final Lock mutex = new ReentrantLock();
     private final String name;
     private final String number;
     private double balance;
@@ -45,5 +49,13 @@ public class Account {
                 ", number='" + number + '\'' +
                 ", balance=" + balance +
                 '}';
+    }
+
+    public void lock(){
+        mutex.lock();
+    }
+
+    public void unlock(){
+        mutex.unlock();
     }
 }
