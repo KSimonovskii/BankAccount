@@ -14,15 +14,22 @@ public class Transfer implements Runnable {
 
     @Override
     public void run() {
-        synchronized (accountFrom){
-            accountFrom.decreaseBalance(amount);
-            synchronized (accountTo){
-                accountTo.addBalance(amount);
-            }
+
+        Account firstLock = accountFrom.getNumber() > accountTo.getNumber()? accountTo : accountFrom;
+        Account secondLock = accountFrom.getNumber() > accountTo.getNumber()? accountFrom : accountTo;
+        synchronized (firstLock){
+
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
+            }
+
+            if (!accountFrom.decreaseBalance(amount)) {
+                return;
+            }
+            synchronized (secondLock){
+                accountTo.addBalance(amount);
             }
         }
 

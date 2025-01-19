@@ -14,8 +14,8 @@ public class BankAppl {
     private static final double MAX_AMOUNT = 1000d;
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        Account account1 = new Account("Account A", "1111", 100_000);
-        Account account2 = new Account("Account B", "2222", 200_000);
+        Account account1 = new Account("Account A", 1000, 100_000);
+        Account account2 = new Account("Account B", 2000, 200_000);
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter count of transactions or 0 for exit:");
