@@ -7,10 +7,10 @@ public class Account {
 
     private final Lock mutex = new ReentrantLock();
     private final String name;
-    private final String number;
+    private final int number;
     private double balance;
 
-    public Account(String name, String number, double balance) {
+    public Account(String name, int number, double balance) {
         this.name = name;
         this.number = number;
         this.balance = balance;
@@ -20,7 +20,7 @@ public class Account {
         return name;
     }
 
-    public String getNumber() {
+    public int getNumber() {
         return number;
     }
 

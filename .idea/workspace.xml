@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed433749-1b2a-4c73-9baf-b6b7cbb8cf84" name="Changes" comment="">
+    <list default="true" id="ed433749-1b2a-4c73-9baf-b6b7cbb8cf84" name="Changes" comment="Deadlock with ReentrantLock">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/telran/gates/BankAppl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/telran/gates/BankAppl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/telran/gates/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/telran/gates/model/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/telran/gates/model/Transfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/telran/gates/model/Transfer.java" afterDir="false" />
     </list>
@@ -24,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="deadlock-reentrantlock" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +44,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "deadlock-reentrantlock"
+    "git-widget-placeholder": "deadlock-reentrantlock-fix"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -55,6 +56,27 @@
       <option name="presentableId" value="Default" />
       <updated>1737243152755</updated>
     </task>
+    <task id="LOCAL-00001" summary="Deadlock with ReentrantLock">
+      <option name="closed" value="true" />
+      <created>1737309315156</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737309315156</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Deadlock with ReentrantLock">
+      <option name="closed" value="true" />
+      <created>1737309323379</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737309323379</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Deadlock with ReentrantLock" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deadlock with ReentrantLock" />
   </component>
 </project>

@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Transfer implements Runnable {
 
-    private static Lock mutex = new ReentrantLock()
+    private static final Lock mutex = new ReentrantLock();
     private Account accountFrom;
     private Account accountTo;
     private double amount;
@@ -19,27 +19,29 @@ public class Transfer implements Runnable {
     @Override
     public void run() {
 
-        accountFrom.lock();
+        Account firstLock = accountFrom.getNumber() > accountTo.getNumber() ? accountTo : accountFrom;
+        Account secondLock = accountFrom.getNumber() > accountTo.getNumber() ? accountFrom : accountTo;
+
+        firstLock.lock();
         try {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            if (!accountFrom.decreaseBalance(amount)) {
+            if (!firstLock.decreaseBalance(amount)) {
                 return;
             }
-            accountTo.lock();
+            secondLock.lock();
             try {
-                accountTo.addBalance(amount);
+                secondLock.addBalance(amount);
             } finally {
-                accountTo.unlock();
+                secondLock.unlock();
             }
         } finally {
-            accountFrom.unlock();
+            firstLock.unlock();
         }
     }
-
 
     @Override
     public String toString() {
